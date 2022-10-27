@@ -1,0 +1,27 @@
+
+
+
+<div>
+    <h4>Patient Table Data</h4>
+    <table>
+      <thead>
+        <tr >
+                  <th ><img src="../../assets/sort-solid.svg" (click)="sortData('id')" style="padding-right:5px;" width="15px" height="15px" alt=""> #ID</th>
+                  <th ><img src="../../assets/sort-solid.svg" (click)="sortData('gender')" style="padding-right:5px;"width="15px" height="15px" alt="">GENDER</th>
+                  <th><img src="../../assets/sort-solid.svg" (click)="sortData('birthDate')" style="padding-right:5px;"width="15px" height="15px" alt="">BirthDate</th>
+                  <th>Patient Page</th>
+              
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of patientData.entry">
+                  <td>{{ item.resource.id }}</td>
+                  <td>{{ item.resource.gender }}</td>
+                  <td>{{ item.resource.birthDate }}</td>
+                  <td> <a [href]="item.fullUrl" target="_blank">{{ item.fullUrl }}</a></td>
+                
+                  
+                </tr>
+              </tbody>
+    </table>
+  </div>
